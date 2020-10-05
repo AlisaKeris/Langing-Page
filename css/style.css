@@ -1,0 +1,83 @@
+:root{
+    --dark-color: rgba(33, 163, 196, 0.548);
+    --medium-color: rgb(243, 234, 234);
+    --light-color: rgba(41, 221, 245, 0.288);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Sansita Swashed', cursive;
+    padding: 2rem;
+}
+.header{
+    height: 95vh;
+    background-image: linear-gradient(to bottom right, var(--light-color),var(--dark-color)),url("../img/pilt1.jpeg");
+    background-size: cover; 
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 56%, 0 100%);
+    color: var(--medium-color);
+}
+.text-box{
+    position: absolute;
+    top:30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.heading-primary{
+    text-transform: uppercase;
+}
+.heading-primary-main{
+    display: block;
+    font-size: 5rem;
+    letter-spacing: 1rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+@keyframes moveInLeft{
+    0%{transform: translateX(-100px); opacity: 0;}
+    80%{transform: translateX(20px);}
+    100%{transform: translateX(0); opacity: 1;}
+}
+.heading-primary-sub{
+    display: block;
+    letter-spacing: 0.6rem;
+    font-size: 2rem;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+@keyframes moveInRight{
+    0%{transform: translateX(100px); opacity: 0;}
+    80%{transform: translateX(-20px);}
+    100%{transform: translateX(0); opacity: 1;}
+}
+.btn{
+    display: inline-block;
+    color: var(--medium-color);
+    text-decoration: none;
+    border: 5px groove var(--medium-color);
+    animation-name: btnAnim;
+    animation-duration: 5s;
+    opacity:0;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    transition-property: transform;
+    transition-duration: 3s;
+    letter-spacing: 0.6rem;
+    margin-left:7rem;
+}
+@keyframes btnAnim{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.btn:hover{
+    transform: rotateY(180deg);
+}
